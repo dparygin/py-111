@@ -53,7 +53,7 @@ def summ_list(dg, sl):
 def main():
     sl = sort_list()
     dg = data_gen(A, B, sum_dig)
-    print("Сгенерированный не сортированный список")
+    print("Сгенерированный несортированный список")
     print(dg)
     print("Отсортированный")
     print(summ_list(dg, sl))
