@@ -9,7 +9,7 @@ import random
 
 A = 13
 B = 25
-sum_dig = (10**2)
+sum_dig = (10**6)
 
 def data_gen(A, B, sum_dig):
     """
@@ -33,6 +33,15 @@ def sort_list():
     return dict
 
 def summ_list(dg, sl):
+    """
+    Схлопываем список в один
+    словарь, за один проход.
+    А затем разворачиваем в
+    правильном порядке.
+    :param dg: Несортированный список
+    :param sl: Начальный сортированный словарь
+    :return: Отсортированный словарь
+    """
     flist = []
     for i in dg:
         sl.update({i: (sl.get(i) + 1)})
@@ -44,7 +53,9 @@ def summ_list(dg, sl):
 def main():
     sl = sort_list()
     dg = data_gen(A, B, sum_dig)
+    print("Сгенерированный не сортированный список")
     print(dg)
+    print("Отсортированный")
     print(summ_list(dg, sl))
 
 if __name__ == '__main__':
